@@ -71,11 +71,11 @@ contract LOIPreIEO is Context, Ownable {
     event VestingStarted(address indexed investor, uint256 vestedAmount, uint256 vestingStart);
 
     constructor(address _owner, address _LOIContract) {
-        LOIContract = _LOIContract;
-        investorCount = 0;
-        preIEOActive = false; // Initialize preIEOActive variable
-        transferOwnership(_owner);
-    }
+    LOIContract = _LOIContract;
+    investorCount = 0;
+    preIEOActive = false; // Initialize preIEOActive variable
+    transferOwnership(_owner); // Add this line to set the initial owner
+}
 
     modifier isLOIActive() {
         require(preIEOActive, "LOI token is not active");
